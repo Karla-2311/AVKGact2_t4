@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><title>Detalle</title></head>
+<body>
+<h1>Detalle de la materia</h1>
+<p>Proyecto de <b th:text="${autor}"></b></p>
+<div th:if="${materia != null}">
+  <p>ID: <span th:text="${materia.id}"></span></p>
+  <p>Nombre: <span th:text="${materia.nombre}"></span></p>
+  <p>Créditos: <span th:text="${materia.creditos}"></span></p>
+  <p>Semestre: <span th:text="${materia.semestre}"></span></p>
+</div>
+<p th:if="${materia == null}">No se encontró la materia.</p>
+<a th:href="@{/web/materias}">Volver a la lista</a>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><title>Materias</title></head>
+<body>
+<h1>Materias</h1>
+<p>Proyecto de <b th:text="${autor}"></b></p>
+<table border="1">
+  <tr><th>ID</th><th>Nombre</th><th>Créditos</th><th>Semestre</th></tr>
+  <tr th:each="m : ${materias}">
+    <td th:text="${m.id}"></td>
+    <td><a th:href="@{/web/materia/{id}(id=${m.id})}" th:text="${m.nombre}"></a></td>
+    <td th:text="${m.creditos}"></td>
+    <td th:text="${m.semestre}"></td>
+  </tr>
+</table>
+<a th:href="@{/web/nueva}">Agregar materia</a>
+</body>
+</html>

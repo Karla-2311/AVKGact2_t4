@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><title>Nueva materia</title></head>
+<body>
+<h1>Nueva materia</h1>
+<p>Proyecto de <b th:text="${autor}"></b></p>
+<form th:action="@{/web/nueva}" th:object="${materia}" method="post">
+  <input type="text" th:field="*{nombre}" placeholder="Nombre"><br>
+  <input type="number" th:field="*{creditos}" placeholder="Créditos"><br>
+  <input type="number" th:field="*{semestre}" placeholder="Semestre"><br>
+  <button type="submit">Guardar</button>
+</form>
+</body>
+</html>
